@@ -1,0 +1,28 @@
+import datetime
+import holidays
+
+# So this is an attempt to check yesterday date to see if it is a non-working day,
+# a Saturday or a Sunday, because the interprise does not work on Week-ends. 
+# If it fills up those contitions , it returns none, else, it returns Yesterday in the format DDMMYY. 
+# As you can see it is based on Cameroonian holidays. The holidays class did not include Cameroon even though
+# it had Nigeria, Burundi, and others. My thiny knowledge of Python had me get inspired with Nigeria and Burundi
+#to create the Cameroon class. But I cannot get it to work properly. Any comment advice and code proposals are welcome.
+
+""" Find the current date in the format JJMMYY, """
+today = datetime.date.today
+
+""" THEN find yesterday's date (as Yesterday = today - 1 day),  in the format DDMMYY. """
+date_yesterday = datetime.datetime.strftime(datetime.datetime.now() - datetime.timedelta(1), '%d-%m-%Y')
+
+""" Select country """
+cm_holidays = holidays.CM()
+
+""" If it is a holidays/Saturdau/Sunday, it returns False else it returns yesterday in format DDMMYY"""
+for ptr in holidays.CM(years = 2020):
+    f = open("cameroon.py",'r')
+    content = f.readlines()
+    f.close()
+    if date_yesterday = cm.holidays:
+        return False
+    else:
+        return date_yesterday
